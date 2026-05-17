@@ -1,0 +1,18 @@
+{
+  "name": "notes_2",
+  "version": "1.0.0",
+  "description": "This project is for practicing Nodejs.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon backend/src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^8.24.0",
+    "nodemon": "^3.1.14"
+  }
+}
