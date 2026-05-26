@@ -93,6 +93,26 @@ const updateNote = async (req, res) => {
   }
 };
 
+const updateNotePart = async (req, res) => {
+  try {
+    const updatedNotePart = await Note.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true },
+    );
+
+    res.status(200).json({
+      message: 'Updated some part of the note',
+      updatedNotePart,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: 'Internal server error',
+      error: error.message,
+    });
+  }
+};
+
 const deleteNote = async (req, res) => {
   try {
     const deletedNote = await Note.findOneAndDelete({
@@ -114,4 +134,11 @@ const deleteNote = async (req, res) => {
   }
 };
 
-export { createNote, getAllNotes, getNote, updateNote, deleteNote };
+export {
+  createNote,
+  getAllNotes,
+  getNote,
+  updateNote,
+  updateNotePart,
+  deleteNote,
+};
