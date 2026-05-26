@@ -14,7 +14,9 @@ const createNote = async (req, res) => {
       content,
       tag,
     });
+
     await note.populate('tag');
+
     res.status(201).json({
       message: 'Note created successfully',
       note,
