@@ -6,11 +6,13 @@ import {
   updateNote,
   updateNotePart,
   deleteNote,
+  searchNoteByTag,
 } from '../controllers/notes.controller.js';
 const router = Router();
 
 router.route('').post(createNote);
 router.route('').get(getAllNotes);
+router.route('/search').get(searchNoteByTag);
 router.route('/:id').get(getNote);
 router.route('/:id').put(updateNote);
 router.route('/:id').patch(updateNotePart);

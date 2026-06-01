@@ -18,10 +18,12 @@ const noteSchema = new Schema(
       type: String,
       required: true,
     },
-    tag: {
-      type: Schema.Types.ObjectId,
-      ref: 'Tag',
-    },
+    tags: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Tag',
+      },
+    ],
   },
   {
     timestamps: true,
