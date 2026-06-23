@@ -10,6 +10,11 @@ import {
 } from '../controllers/notes.controller.js';
 const router = Router();
 
+router.use('/:id', (req, res, next) => {
+  console.log(`router level middleware on path: ${req.originalUrl}`);
+  next();
+});
+
 router.route('').post(createNote);
 router.route('').get(getAllNotes);
 router.route('/search').get(searchNoteByTag);
